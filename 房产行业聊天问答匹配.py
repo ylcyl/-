@@ -344,6 +344,14 @@ logger.info("global_step: {}, dev_loss: {}, acc: {}, f1: {}".format(
     global_step, dev_loss, acc, f1
 ))
 
+import os
+
+# 保存模型
+save_dir = "model_data"
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)
+model.save_pretrained(save_dir)
+
 # 加载测试集，使用训练好的模型参数在测试集上进行预测，得到预测结果。
 test_dataset = load_dataset(read_data,
                              query_data_file='data/test/test.query.tsv',
