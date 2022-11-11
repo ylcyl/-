@@ -51,8 +51,8 @@ from sklearn.model_selection import train_test_split
 
 # 加载训练集
 dataset = load_dataset(read_data,
-                             query_data_file='work/data/train/train.query.tsv',
-                             reply_data_file='work/data/train/train.reply.tsv',
+                             query_data_file='data/train/train.query.tsv',
+                             reply_data_file='data/train/train.reply.tsv',
                              is_test=False,
                              lazy=False)
 
@@ -346,8 +346,8 @@ logger.info("global_step: {}, dev_loss: {}, acc: {}, f1: {}".format(
 
 # 加载测试集，使用训练好的模型参数在测试集上进行预测，得到预测结果。
 test_dataset = load_dataset(read_data,
-                             query_data_file='work/data/test/test.query.tsv',
-                             reply_data_file='work/data/test/test.reply.tsv',
+                             query_data_file='data/test/test.query.tsv',
+                             reply_data_file='data/test/test.reply.tsv',
                              is_test=True,
                              lazy=False)
 print(test_dataset[0])
